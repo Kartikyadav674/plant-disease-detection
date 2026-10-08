@@ -1,0 +1,21 @@
+# Massive Dataset folders (Do NOT push to GitHub - over 88,000 files)
+train/
+valid/
+test/
+
+# Large H5 model (94MB, near GitHub limit; trained_model.keras at 31MB is tracked instead)
+trained_model.h5
+
+# Python & Environment
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+
+# Jupyter & OS files
+.ipynb_checkpoints/
+.DS_Store
+Thumbs.db
+train31.ipynb
