@@ -94,14 +94,15 @@ except ImportError:
 def load_disease_model():
     """Load model from .keras or .h5 with fallback."""
     import tensorflow as tf
-    keras_path = Path("trained_model.keras")
-    h5_path = Path("trained_model.h5")
+    base_dir = Path(__file__).parent
+    keras_path = base_dir / "trained_model.keras"
+    h5_path = base_dir / "trained_model.h5"
     
     if keras_path.exists():
         try:
             return tf.keras.models.load_model(str(keras_path))
-        except Exception:
-            pass
+        except Exception as e:
+            st.error(f"Error loading trained_model.keras: {e}")
             
     if h5_path.exists():
         try:
